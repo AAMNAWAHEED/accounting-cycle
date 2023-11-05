@@ -1,0 +1,89 @@
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='FORMCSS.css') }}">
+
+    <title>Document</title>
+</head>
+<body>
+	{% block form %}
+	<label for="date">Date</label>
+	<input type="date" id="date" name="date"><br><br>
+	<label for="head">head</label>
+		<select id="head", name="head">
+			<option value="owner capital">owner capital</option>
+			<option value="owner withdraw">owner withdraw</option>
+			<optgroup label="asset">
+				<option value="cash">cash</option>
+				<option value="land">land</option>
+				<option value="supplies">supplies</option>
+				<option value="building">building</option>
+				<option value="furniture">furniture</option>
+				<option value="inventory">inventory</option>
+				<option value="account receiveable">account receiveable</option>
+				<option value="prepaid rent">prepaid rent</option>
+				<option value="prepaid adv">prepaid adv</option>
+				<option value="acc-dep-furniture">acc-dep-furniture</option>
+				<option value="acc-dep-building">acc-dep-building</option>
+				<option value="acc-dep-land">acc-dep-land</option>
+			</optgroup>
+			<optgroup label="liability">
+				<option value="account payable">account payable</option>
+				<option value="unearned">unearned</option>
+			</optgroup>
+			<optgroup label="revenue">
+				<option value="service revenue">service revenue</option>
+				<option value="rent revenue">rent revenue</option>
+				<option value="interest revenue">interest revenue</option>
+			</optgroup>
+			<optgroup label="expense">
+				<option value="COGS">COGS</option>
+				<option value="rent expense">rent expense</option>
+				<option value="utility expense">utility expense</option>
+				<option value="salary expense">salary expense</option>
+				<option value="interest expense">interest expense</option>
+				<option value="dep-expense-furniture">dep-expense-furniture</option>
+				<option value="dep-expense-building">dep-expense-building</option>
+				<option value="dep-expense-land">dep-expense-land</option>
+			</optgroup>
+		</select><br><br>
+		<label for="type">type</label>
+		<select id="type" name="type">
+			<option value="debit">Debit</option>
+			<option value="credit">credit</option>
+		</select><br><br>
+		<!--normal fixed-->
+		<label for="balance">balance</label>
+		<input type="text" id="balance" name="balance"><br><br>
+		
+	{% endblock form %}
+		
+	  {% block FOOTER %}
+	  
+	  <div class="list">
+		<ul>
+			<li>Tran_id</li>
+			<li>Date</li>
+			<li>Head</li>
+			<li>Flag</li>
+			<li>Type</li>
+			<li>Balance</li>
+		</ul>
+		<div class="childlist">
+			{% for i in data  %}
+			<ul>
+			{% for value in i.values() %}
+				<li>{{value}}</li>
+			{% endfor %}
+				</ul>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock FOOTER %}
+</body>
+</html>
+{% endblock body%}

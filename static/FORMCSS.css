@@ -1,0 +1,76 @@
+.background {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+position: relative;
+}
+
+.background::before {
+content: "";
+background-image: url("/static/images/main image.webp");
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-size: 500px;
+opacity: 0.1;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: -1;
+}
+H1,H3{
+    text-align: center;
+    color: rgb(0, 21, 255);
+}
+form{
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.buttons button{
+    margin: 5px;
+    padding: 7px;
+    background-color: rgb(0, 21, 255);
+    border-radius: 5px;
+}
+.buttons button:hover{
+    background-color: rgb(124, 124, 230);
+}
+.list >ul{
+    background-color: aqua;
+    margin-top: 30px;
+    list-style: none;
+    text-align: center;
+}
+.childlist >ul{
+    background-color: aqua;
+    margin-top: 30px;
+    list-style: none;
+    text-align: center;
+}
+.list >ul>li{
+    font-size: 20px;
+    font-weight: bold;	
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-block;    
+}
+.childlist >ul>li{
+    margin-left: 50px;
+    margin-right: 50px;
+display: inline-block;
+
+}
+.background img{
+display: block;
+margin: 0 auto;
+width: 50px;
+height: 60px;
+border-radius:50% ;
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block body %}
+    <DIV class="container">
+        <div class="links">
+            <ul>
+                 <li><a href="#income_stat">INCOME STATEMENT</a></li>
+                 <li><a href="#owner_equity">OWNER EQUITY STATEMENT</a></li>
+                 <li><a href="#balance_sheet">BALANCE SHEET</a></li>
+                 <li><a href="/closing">CLOSE ACCOUNTS</a></li>
+            </ul>
+         </div>
+         <img src="/static/images/num-5.jpg">
+         <h3>ADJUSTED TRIAL BALANCE</h3>
+    {{super()}}
+    <img src="/static/images/num-6.jpg">
+    <h3>FINANCIAL STATEMENTS</h3>
+    <div class="income">
+        <h3><section id="income_stat">INCOME STATEMENT</section></h3>
+        <p>income statement</p>
+        <p>ABC corporation</p>
+        <p>for the period ending</p>
+        <H4>REVENUE</H4>
+        {%for key,value in rev_dic.items()%}
+            <p>{{key}}{{value}}</p>
+        {%endfor%}
+        <H4>EXPENSE</H4>
+        {%for key,value in exp_dic.items()%}
+            <p>{{key}}  {{value}}</p>
+        {%endfor%}
+        <h4>NET INCOME {{net_inc}}</h4>
+    </div>
+    <div class="owner">
+        <h3><section id="owner_equity">OWNER EQUITY STATEMENT</section></h3>
+        <p>owner equity statement</p>
+        <p>ABC corporation</p>
+        <p>for the period ending</p>
+        <p>owner capital {{o_c}}</p>
+        <p>owner withdraw {{o_w}}</p>
+        <p>net income {{net_inc}}</p>
+        <h4>OWNER EQUITY {{o_e}}</h4>
+    </div>
+    <div class="balance">
+        <h3><section id="balance_sheet">BALANCE SHEET</section></h3>
+        <p>balance sheet</p>
+        <h4>assets</h4>
+        {%for key,value in ass_dic.items()%}
+            {%if value !=0%}
+                <p>{{key}}  {{value}}</p>
+            {%endif%}
+        {%endfor%}
+        <h4>total {{ass}}</h4>
+        <h4>liability</h4>
+        {%for key,value in liab_dic.items()%}
+            {%if value !=0%}
+                <p>{{key}}  {{value}}</p>   
+            {%endif%}
+        {%endfor%}
+        <p>owner equity {{o_e}}</p>
+        <h4>total {{new_oe}}</h4>
+    </div>
+</DIV>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'formhtml.html' %}
+{% block form %}
+<div class="background" >
+    <h1>ACCOUNTING CYCLE IMPEMENTATION</h1>
+    <img src="/static/images/NUMM-1.jpg">
+    <h3>MAKE TRANSACTIONS</h3><BR>
+<form action="/upload" method="post">
+    {{super()}}
+    <label for="flag">Flag</label>
+	<input type="text" id="flag" name="flag" value="Normal" readonly><br><br>
+    <div class="buttons">
+        <button formaction="/add">add</button>
+        <button formaction="/new">new</button>
+        <button formaction="/submit">submit</button>
+        <button formaction="/clear">clear</button>
+    </div>
+</form>
+
+{% endblock form %}
+{% block FOOTER %}
+
+    <img src="/static/images/num-2.jpg">
+	<h3>POST TO LEDGER ACCOUNTS</h3>
+
+    {{super()}}
+ {% endblock FOOTER %}
+</div>

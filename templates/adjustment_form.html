@@ -1,0 +1,23 @@
+{% extends 'formhtml.html' %}
+{% block form %}
+<div class="background" >
+	<img src="/static/images/NUM-4.png">
+	<h3>MAKE ADJUSTMENT ENTRIES</h3><BR>
+<form action="/upload" method="post">
+    {{super()}}
+	<label for="flag">Flag</label>
+		<input type="text" id="flag" name="flag" value="Adjustment" readonly><br><br>
+	<div class="buttons">
+		<button formaction="/adjustments/add">add</button>
+		<button formaction="/adjustments/new">new</button>
+		<button formaction="/adjustments/submit">submit</button>
+		<button formaction="/clear">clear</button>
+	</div>
+</form>
+{% endblock form %}
+{% block FOOTER %}
+	<h3>POST TO LEDGER ACCOUNTS</h3>
+
+    {{super()}}
+ {% endblock FOOTER %}
+</div>
